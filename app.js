@@ -200,6 +200,9 @@ var renderFinalResults = function(state){
 	$("li").html("");
 	$("h2").hide();
 	$(".question").html("You got " + state.totalCorrect + " out of " + state.questionOrder.length + " correct!");
+	if (state.totalCorrect == state.questionOrder.length){
+		$(".answerA").html("Perfect score!");
+	}
 	$(".js-final-results").hide();
 	$("footer").hide();
 	$(".js-start-quiz").fadeIn().html("Start Over");
