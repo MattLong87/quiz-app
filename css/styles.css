@@ -63,6 +63,7 @@ li{
 .choosable:hover{
 	border: 3px #34495E solid;
 	cursor: pointer;
+	user-select: none;
 }
 
 i{
