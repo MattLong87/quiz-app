@@ -17,6 +17,6 @@ ul{
 	padding: 0px;
 }
 
-.js-next-question{
+.js-next-question, .js-final-results, h2, footer{
 	display: none;
 }

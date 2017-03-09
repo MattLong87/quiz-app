@@ -10,7 +10,7 @@
 <div class = "container">
  <header class = "border">
  <h1>The Virtual Reality Quiz</h1>
- <h2>Question <span class = "questionnumber">1</span> of <span class = "numberofquestions">5</span></h2>
+ <h2>Question <span class = "js-question-number">0</span> of <span class = "numberofquestions">5</span></h2>
  </header>
 
  <main class = "border">
@@ -19,20 +19,22 @@
 	 </section>
 	 <section class = "answers">
 		 <ul>
-			 <li class = "answerA">Samsung</li>
-			 <li class = "answerB">Google</li>
-			 <li class = "answerC">Oculus</li>
-			 <li class = "answerD">Valve</li>
+			 <li class = "answerA" id = "A">Samsung</li>
+			 <li class = "answerB" id = "B">Google</li>
+			 <li class = "answerC" id = "C">Oculus</li>
+			 <li class = "answerD" id = "D">Valve</li>
 		 </ul>
 	 </section>
 	 <button class = "js-next-question">Next Question</button>
 	 <button class = "js-start-quiz">Start Quiz</button>
+	 <button class = "js-final-results">Final Results</button>
  </main>
  <footer>
-0 correct, 0 incorrect
+<span class = "js-num-correct">0</span> correct, <span class = "js-num-incorrect">0</span> incorrect
  </footer>
 </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src ="app.js"></script>
+<script src="https://use.fontawesome.com/0c4fc7df16.js"></script>
 </html>
