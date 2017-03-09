@@ -160,13 +160,6 @@ var checkAnswer =  function(state, answerChoice){
 
 
 // Render functions
-var renderInitialScreen = function(state){
-	$(".question").html("Test your knowledge of consumer VR with this 5 question quiz!")
-	$(".answerA").html("");
-	$(".answerB").html("");
-	$(".answerC").html("");
-	$(".answerD").html("");
-};
 
 //breaking the rules and not making it take an element
 var renderQuestion = function(state){
@@ -178,6 +171,7 @@ var renderQuestion = function(state){
 	$(".answerB").html(state.answerB);
 	$(".answerC").html(state.answerC);
 	$(".answerD").html(state.answerD);
+	$("li").addClass("choosable");
 };
 
 var renderPostQuestion = function(state, choice){
@@ -191,13 +185,14 @@ var renderPostQuestion = function(state, choice){
 
 	$(".js-num-correct").html(state.totalCorrect);
 	$(".js-num-incorrect").html(state.questionsSoFar - state.totalCorrect); 
+	$("li").removeClass("choosable");
 
 
 	if (state.currentQuestionIndex == state.questionOrder.length){
-		$(".js-final-results").show();
+		$(".js-final-results").fadeIn();
 	}
 	else{
-		$(".js-next-question").show();
+		$(".js-next-question").fadeIn();
 	}
 };
 
@@ -207,7 +202,7 @@ var renderFinalResults = function(state){
 	$(".question").html("You got " + state.totalCorrect + " out of " + state.questionOrder.length + " correct!");
 	$(".js-final-results").hide();
 	$("footer").hide();
-	$(".js-start-quiz").show().html("Start Over");
+	$(".js-start-quiz").fadeIn().html("Start Over");
 };
 
 
@@ -237,7 +232,6 @@ function handleGuess(){
 	renderPostQuestion(state, $(this));
 }
 
-$(renderInitialScreen(state));
 
 //start-quiz -> initializeGame -> loadQuestion -> renderQuestion -> listen for click
 //after click, handleGuess -> listen for next-question
