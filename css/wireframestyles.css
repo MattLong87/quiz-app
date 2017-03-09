@@ -16,3 +16,7 @@ ul{
 	list-style: none;
 	padding: 0px;
 }
+
+.js-next-question{
+	display: none;
+}
